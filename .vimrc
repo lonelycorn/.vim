@@ -17,7 +17,9 @@ filetype indent plugin on "to use customized indent
 syntax enable
 set background=dark
 
-"===== space & tabs =====
+"===== show special characters =====
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set list
 
 "===== UI config =====
 set number
@@ -28,6 +30,7 @@ set wildmenu
 set lazyredraw
 set showmatch
 set ruler
+set colorcolumn=80
 
 "===== searching =====
 set incsearch
