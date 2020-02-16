@@ -1,4 +1,7 @@
-set nocompatible
+set nocompatible " who cares about vi-compatability?
+
+"===== line-ending ====
+set ff=unix
 
 "===== pathogen =====
 call pathogen#infect()
@@ -11,10 +14,10 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 set shiftwidth=4
-filetype indent plugin on "to use customized indent
+filetype plugin indent on "to use customized indent
 
 "===== color =====
-syntax enable
+syntax on
 set background=dark
 
 "===== show special characters =====
@@ -25,16 +28,17 @@ set background=dark
 set number
 set showcmd
 "set cursorline "underline the cursor
-filetype indent on
 set wildmenu
 set lazyredraw
 set showmatch
 set ruler
 set colorcolumn=80
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif "jump to the last position when reopening a file
 
 "===== searching =====
 set incsearch
 set hlsearch
+set smartcase " do smar case matching
 
 "===== folding ======
 set foldenable
